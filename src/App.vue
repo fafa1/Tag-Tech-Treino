@@ -2,8 +2,7 @@
     <div class="corpo">
         <nav>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li> <a href="/cadastro">Cadastro</a></li>
+                <li v-for="route in router"><router-link :to="route.path">{{route.name}}</router-link></li>
             </ul>
         </nav>
 
@@ -12,8 +11,16 @@
 </template>
 
 <script>
+//nao reconhece o import deve ser pq da isntancia
+import router from './router'
 
-    export default {}
+    export default {
+        data(){
+            return{
+                router
+            }
+        }
+    }
 </script>
 
 <style>

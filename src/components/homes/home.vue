@@ -7,8 +7,8 @@
     <ul class="lista-fotos">      
       <li class="lista-fotos-item" v-for="foto in fotosComFiltro">
             
-           <meu-painel :titulo="foto.title"> 
-              <imagem-responsiva :url="foto.url" :titulo="foto.title"/>
+           <meu-painel :titulo="foto.titulo"> 
+              <imagem-responsiva :url="foto.url" :titulo="foto.titulo"/>
                <!--  <img class="imagem-responsiva" :src="foto.url" alt="titulo"> -->
           </meu-painel>    
 
@@ -44,7 +44,7 @@ export default {
     fotosComFiltro(){
       if(this.filtros){
         let exp = new RegExp(this.filtros.trim(), 'i')
-        return this.fotos.filter(foto => exp.test(foto.title))
+        return this.fotos.filter(foto => exp.test(foto.titulo))
       } else {
         return this.fotos
       }
