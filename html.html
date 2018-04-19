@@ -1,0 +1,23 @@
+<ul>
+    <li v-for="foto in fotos">
+        <img :src="foto.url" alt="foto.titulo">
+    </li>    
+</ul>
+
+<div class="painel">
+    <h2 class="painel-titulo">{{ foto.titulo }}</h2>
+    <div class="painel-conteudo">
+        <img :src="foto.url" :alt="foto.titulo">
+    </div>
+</div>
+
+<input type="search" class="filtro" placeholder="filtro por titulo">
+
+<h2 class="centralizado">Cadastro</h2>
+
+<nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/cadastro"></a>>Cadastro</li>
+    </ul>
+</nav>
