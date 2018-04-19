@@ -5,8 +5,10 @@
                 <div class="painel-conteudo" v-show="visivel">      
                 <slot></slot> 
                 </div>
-            </transition>                  
-       </div>    
+            </transition>    
+              
+       </div>      
+  </div>
 </template>
 
 
@@ -14,7 +16,13 @@
 
 export default {
     
-    props: ['titulo'], // passar o titulo que vem da classe pai
+    props: {
+      titulo:{
+        type: String,
+        required: true
+      }
+    }, // passar o titulo que vem da classe pai
+
   data(){
     return {
       visivel: true

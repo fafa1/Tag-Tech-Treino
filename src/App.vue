@@ -1,26 +1,32 @@
 <template>
-    <div class="corpo">
-        <nav>
-            <ul>
-                <li v-for="route in router"><router-link :to="route.path">{{route.name}}</router-link></li>
-            </ul>
-        </nav>
+    <div class="corpo">        
 
+    <meu-menu></meu-menu>
+    
+       
+    <transition name="pagina">
         <router-view></router-view>
+    </transition>
     </div>
+
+    
+
 </template>
 
 <script>
-//nao reconhece o import deve ser pq da isntancia
-import router from './router'
-
+    import routes from './router'
+    routes.options.routes["1"].name    
+    import Menu from '@/components/shared/menu/menu.vue'
     export default {
+
         data(){
-            return{
-                router
-            }
-        }
+            return{}
+        },
+    components: {
+        'meu-menu' : Menu
     }
+}
+    
 </script>
 
 <style>
@@ -30,4 +36,14 @@ import router from './router'
         width: 96%;
         margin: 0 auto;
     }
+
+    .pagina-enter, .pagina-leave-active{
+        opacity: 0;
+    }    
+
+    .pagina-enter-active, .pagina-leave-active{
+        transition: opacity .5s;
+    }
+
+
 </style>
