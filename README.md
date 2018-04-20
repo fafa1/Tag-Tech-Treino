@@ -19,3 +19,6 @@ npm run build --report
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+v-on:  ou @ : pra escultar eventos do DOM como o click, pode fazer um método para fazer algo bastante usado
+v-model : two-way binding o que é feito no template pode ser enviado para o script e de lá retornar para o template

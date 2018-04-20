@@ -7,12 +7,13 @@
     <ul class="lista-fotos">      
       <li class="lista-fotos-item" v-for="foto in fotosComFiltro">
             
-           <meu-painel :titulo="foto.title"> 
+          <meu-painel :titulo="foto.title">  <!-- tudo o que tiver dentro de meu painel tenho que inserir com slot -->
               <imagem-responsiva :url="foto.url" :titulo="foto.title"/>
-              <meu-botao tipo="button" rotulo="REMOVER" @click.native="remove(foto)" />
+              <meu-botao tipo="button" rotulo="REMOVER" @click.native="remove(foto)"/> <!-- usando o recurso native para ser usado no temaplate -->
                <!--  <img class="imagem-responsiva" :src="foto.url" alt="titulo"> -->
-          </meu-painel>    
-
+               <!-- <button class="botao" name="button"  @click="remove(foto)">Cliccar</button> -->
+          </meu-painel>
+          
       </li>    
     </ul>     
     
@@ -34,7 +35,7 @@ export default {
 
   data(){
     return {
-      titulo: 'Aula',        
+      titulo: 'Aulas',        
       fotos:[],
       filtros: '' 
      
@@ -74,6 +75,13 @@ export default {
 
 <style>
   
+   .botao{
+        display: inline-block;
+        padding: 10px;
+        border-radius: 3px;
+        margin: 10px;
+        font-size: 1.2em;
+    }
   .filtro{
     display: block;
     width: 70%;

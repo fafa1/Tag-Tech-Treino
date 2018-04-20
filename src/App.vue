@@ -2,20 +2,27 @@
     <div class="corpo">        
 
     <meu-menu></meu-menu>
-    
        
     <transition name="pagina">
         <router-view></router-view>
+        
     </transition>
     </div>
-
-    
 
 </template>
 
 <script>
     import routes from './router'
-    routes.options.routes["1"].name    
+     /*
+     function d (){
+        let res 
+        for (let i=0 ; i<2; i++ ){
+         res = routes.options.routes[i].name
+        }
+     return res   
+    }    
+      console.log(d())
+      */
     import Menu from '@/components/shared/menu/menu.vue'
     export default {
 

@@ -1,9 +1,9 @@
 <template>       
         <div class="painel">
-           <h2 class="painel-titulo" @dblclick="visivel = !visivel" >{{titulo }}</h2> 
+           <h2 class="painel-titulo" @dblclick="visivel = !visivel" >{{ titulo }}</h2> 
             <transition name="painel-fade">          
                 <div class="painel-conteudo" v-show="visivel">      
-                <slot></slot> 
+                <slot></slot><!-- pego tudo que esta na minha tag meu-painel  - imagem e buton--> 
                 </div>
             </transition>    
               
