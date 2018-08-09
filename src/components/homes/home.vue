@@ -6,17 +6,14 @@
     
     <ul class="lista-fotos">      
       <li class="lista-fotos-item" v-for="foto in fotosComFiltro">
-            
-          <meu-painel :titulo="foto.title">  <!-- tudo o que tiver dentro de meu painel tenho que inserir com slot -->
-              <imagem-responsiva :url="foto.url" :titulo="foto.title"/>
+          <meu-painel :titulo="foto.titulo">  <!-- tudo o que tiver dentro de meu painel tenho que inserir com slot -->
+              <imagem-responsiva :url="foto.url" :titulo="foto.titulo"/>
               <meu-botao tipo="button" rotulo="REMOVER" @click.native="remove(foto)"/> <!-- usando o recurso native para ser usado no temaplate -->
                <!--  <img class="imagem-responsiva" :src="foto.url" alt="titulo"> -->
                <!-- <button class="botao" name="button"  @click="remove(foto)">Cliccar</button> -->
-          </meu-painel>
-          
+          </meu-painel>   
       </li>    
     </ul>     
-    
   </div>
 </template>   
 
@@ -46,9 +43,9 @@ export default {
   computed: { 
 
     fotosComFiltro(){
-      if(this.filtros){
+      if (this.filtros) {
         let exp = new RegExp(this.filtros.trim(), 'i')
-        return this.fotos.filter(foto => exp.test(foto.title))
+        return this.fotos.filter(foto => exp.test(foto.titulo))
       } else {
         return this.fotos
       }
@@ -58,7 +55,7 @@ export default {
 
   methods: {
     remove(foto){
-      alert('Remover a foto!' + foto.title)
+      alert('Remover a foto!' + foto.titulo)
     }
   },
 

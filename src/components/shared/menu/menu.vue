@@ -1,5 +1,5 @@
 <template>
-   <nav>
+<nav>
     <ul>
         <li><router-link to="/">Home</router-link></li>
         <li><router-link to="/cadastro">Cadastro</router-link></li>

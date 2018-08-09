@@ -5,15 +5,13 @@
                 <div class="painel-conteudo" v-show="visivel">      
                 <slot></slot><!-- pego tudo que esta na minha tag meu-painel  - imagem e buton--> 
                 </div>
-            </transition>    
-              
+            </transition>        
        </div>      
   </div>
 </template>
 
 
 <script>
-
 export default {
     
     props: {
